@@ -1,0 +1,27 @@
+﻿@Model IEnumerable<SampleMvc.Models.IndexModel>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>this is the Index</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Description</td>
+                <td>Components</td>
+            </tr>
+        </thead>
+        @foreach (SampleMvc.Models.IndexModel item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Description</td>
+                <td>@item.Comments</td>
+
+            </tr>
+        }
+
+    </table>
+    @Html.ActionLink("Next Page", "Index1")
+
